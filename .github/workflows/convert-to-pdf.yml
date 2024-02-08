@@ -32,11 +32,10 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automatically convert documents to PDF"
-          branch: main
+          branch: ${{ github.ref_name }}
           file_pattern: pdfs/
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
           commit_author: Wojo-MannHummel <Wojo-MannHummel@users.noreply.github.com>
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
