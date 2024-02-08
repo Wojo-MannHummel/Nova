@@ -4,11 +4,11 @@ This repository serves as a centralized version control system for our project's
 
 ## Getting Started
 
-To get started, you'll need a GitHub account. If you don't have one, you can create it for free at [GitHub](https://github.com/). Once you have an account, navigate to the repository URL ([Link](https://github.com/Wojo-MannHummel/nova-docs)).
+To get started, you'll need a GitHub account. If you don't have one, you can create it for free at [GitHub](https://github.com/). Once you have an account, we can invite you to this repository.
 
 ### Viewing Documents
 
-You can browse the repository's contents directly from the web browser. Simply click on the directory or file you wish to view (note not all file types can be rendered). Because of this an automated workflow is implemented to take any .docx, .xlsx, .pptx files and convert to PDF to view in the browser located in the pdfs folder.
+Navigate through the repository in your web browser to view files. Click on directories or files of interest. Note: Not all file types render in the browser, so we convert `.docx`, `.xlsx`, `.pptx` files to PDFs for easier viewing, located in the `pdfs` folder.
 
 ### Making Changes to Documents
 
@@ -25,9 +25,30 @@ To update a document, you will need to upload a new version of the file. Here's 
     - Choose to commit directly to the main branch or create a new branch and start a pull request. Committing directly to the main branch is straightforward, but starting a pull request allows for discussion and review before the changes go live.
 
 5. **Submit Your Changes**: Click on "Commit changes" to finalize the update. The repository will now contain the latest version of your document, and the previous versions will be accessible through the commit history, allowing for version control and rollback if necessary.
+   
+## Using Branches
 
+Branches allow you to work on updates or new documents without affecting the main project.
 
-### Best Practices
+1. **Create a Branch**: Use the branch dropdown menu, enter a name for your new branch, and press "Enter".
+2. **Make Changes**: Your updates on this branch won't impact the main documentation until they're merged.
+
+## Tracking Issues
+
+Use issues to track tasks, bugs, or questions.
+
+1. **Open an Issue**: Click "Issues" > "New Issue" and describe your concern or suggestion.
+2. **Discussion**: Team members can comment on issues to provide feedback or solutions.
+
+## Making Pull Requests
+
+Pull requests let you propose changes to the documentation.
+
+1. **Propose Changes**: After pushing changes to your branch, click "Compare & pull request".
+2. **Describe Changes**: Explain what you've updated and mention any specific reviewers.
+3. **Review and Merge**: Team members review your changes. Once approved, a maintainer can merge them into the main branch.
+
+## Best Practices
 
 - **Small, Frequent Updates**: It's easier to track and understand small changes than large, infrequent updates.
 - **Descriptive Commit Messages**: Clearly describe what changed and why. This helps the team follow the repository's history and understand each change's purpose.
