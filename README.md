@@ -1,23 +1,31 @@
 # System Documentation Repository
 
-Welcome to the System Documentation Repository! This repository serves as a centralized location for all our system documentation, ensuring that team members can easily access and contribute to the documentation.
+This repository serves as a centralized version control system for our project's documentation. It is designed to store and track changes to documentation files by leveraging GitHub's features, we aim to simplify the process of updating and maintaining these documents.
 
 ## Getting Started
 
-To get started, you'll need a GitHub account. If you don't have one, you can create it for free at [GitHub](https://github.com/). Once you have an account, navigate to the repository URL (add your repository URL here).
+To get started, you'll need a GitHub account. If you don't have one, you can create it for free at [GitHub](https://github.com/). Once you have an account, navigate to the repository URL ([Link](https://github.com/Wojo-MannHummel/nova-docs)).
 
 ### Viewing Documents
 
-You can browse the repository's contents directly from the web browser. Simply click on the directory or file you wish to view. Markdown files (`.md`) will be automatically rendered for easy reading.
+You can browse the repository's contents directly from the web browser. Simply click on the directory or file you wish to view (note not all file types can be rendered). Markdown files (`.md`) will be automatically rendered for easy reading and a background task converts .docx files automatically to markdown for online viewing.
 
 ### Making Changes to Documents
 
-To make changes to a document using the web browser:
+To update a document, you will need to upload a new version of the file. Here's how you can do it using the GitHub web interface:
 
-1. **Navigate to the Document**: Find the document you want to edit in the repository and click on it to view its contents.
-2. **Edit the Document**: Click on the pencil icon (Edit this file) in the upper right corner of the document view.
-3. **Make Your Changes**: Edit the content directly in the GitHub text editor. For Markdown documents, you can use [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) for formatting.
-4. **Preview Changes**: Use the "Preview changes" tab to see how your changes will look. This is especially useful for Markdown files.
+1. **Navigate to the Folder**: Go to the folder where the document you wish to update is located.
+
+2. **Upload the New Version**: Click on the "Add file" button near the top right corner and select "Upload files" from the dropdown menu.
+
+3. **Select Your File**: Click "choose your files" to select the updated `.docx` file from your computer. Ensure the file name matches the document you're updating.
+
+4. **Commit the Change**: After uploading the file, scroll down to the "Commit changes" section. Here, you can:
+    - Provide a brief description of the changes made in the "Commit changes" textbox.
+    - Choose to commit directly to the main branch or create a new branch and start a pull request. Committing directly to the main branch is straightforward, but starting a pull request allows for discussion and review before the changes go live.
+
+5. **Submit Your Changes**: Click on "Commit changes" to finalize the update. The repository will now contain the latest version of your document, and the previous versions will be accessible through the commit history, allowing for version control and rollback if necessary.
+
 
 ### Committing Changes
 
@@ -38,8 +46,4 @@ After making changes, it's time to commit them to the repository:
 
 ## Contributing
 
-We welcome contributions to our documentation! If you'd like to contribute, please fork the repository, make your changes, and submit a pull request. For more detailed instructions on contributing, see [CONTRIBUTING.md](./CONTRIBUTING.md).
-
-## Feedback
-
-If you have any questions or feedback about the documentation, please open an issue in the repository. We appreciate your input and will do our best to incorporate your suggestions into the documentation.
+We encourage contributions to our documentation. If you have suggestions for improvements or have found an error you'd like to correct, please follow the process outlined above for making changes. For significant modifications or new documents, consider opening a pull request so that your proposals can be discussed.
