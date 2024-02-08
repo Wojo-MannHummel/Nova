@@ -34,9 +34,6 @@ Branches allow you to freely work on updates or new documents without affecting 
 
 1. **Create a Branch**: On the repository's main page, find the branch selector dropdown. Type a name for your new branch and hit "Enter" to create it. Branch names should be descriptive (e.g., `update-installation-docs`).
 2. **Switch to Your Branch**: GitHub will automatically switch you to the new branch. You're now ready to make changes without impacting the main branch.
-
-Once on your branch, you're free to make changes:
-
 3. **Edit or Add Files**: Use the GitHub interface to edit existing files or add new ones. Remember, changes on this branch won't affect the main branch until they're merged.
 4. **Commit Changes**: Save your changes by committing them to your branch. Provide a clear commit message that explains what you've done and why.
 
