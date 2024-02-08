@@ -28,3 +28,11 @@ jobs:
         with:
           commit_message: Convert DOCX files to Markdown
           file_pattern: markdown/*.md
+          repository: .
+          branch: main  # Ensure this matches your default branch, if not adjust accordingly
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_author: Wojo-MannHummel <Wojo-MannHummel@users.noreply.github.com>
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
