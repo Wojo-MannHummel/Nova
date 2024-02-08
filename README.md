@@ -28,10 +28,36 @@ To update a document, you will need to upload a new version of the file. Here's 
    
 ## Using Branches
 
-Branches allow you to work on updates or new documents without affecting the main project.
+Branches allow you to freely work on updates or new documents without affecting the main project and maintain a single source of truth.
 
-1. **Create a Branch**: Use the branch dropdown menu, enter a name for your new branch, and press "Enter".
-2. **Make Changes**: Your updates on this branch won't impact the main documentation until they're merged.
+### Creating and Switching Branches
+
+1. **Create a Branch**: On the repository's main page, find the branch selector dropdown. Type a name for your new branch and hit "Enter" to create it. Branch names should be descriptive (e.g., `update-installation-docs`).
+2. **Switch to Your Branch**: GitHub will automatically switch you to the new branch. You're now ready to make changes without impacting the main branch.
+
+Once on your branch, you're free to make changes:
+
+3. **Edit or Add Files**: Use the GitHub interface to edit existing files or add new ones. Remember, changes on this branch won't affect the main branch until they're merged.
+4. **Commit Changes**: Save your changes by committing them to your branch. Provide a clear commit message that explains what you've done and why.
+
+A pull request (PR) is a way to propose changes from your branch to the main branch. It allows team members to review the changes before they're integrated, ensuring quality and collaboration.
+
+### Initiating a Pull Request
+
+1. **Open a Pull Request**: Once you've committed changes to your branch, navigate to the "Pull requests" tab in your repository and click "New pull request".
+2. **Choose Branches**: Select your branch as the "compare" branch and the main branch as the "base" branch.
+3. **Review Changes**: GitHub will show you the differences between the two branches. Review these to ensure accuracy.
+4. **Create Pull Request**: Click "Create pull request". Provide a title and a detailed description of your changes. Mention any team members you wish to review your PR.
+
+### Reviewing and Merging Pull Requests
+
+1. **Review Process**: Team members can review the proposed changes, leave comments, and request additional modifications if necessary.
+2. **Address Feedback**: If feedback is provided, you may need to make further changes to your branch. These updates will automatically be part of the existing pull request.
+3. **Approve and Merge**: Once the pull request is approved, the final step is to merge it into the main branch. Click "Merge pull request" and then "Confirm merge" to integrate your changes. GitHub might offer different merge options, such as creating a merge commit, squashing commits, or rebasing. For most documentation updates, creating a merge commit is straightforward and preserves the history of your changes.
+
+### Deleting Your Branch (Optional)
+
+After merging, GitHub will give you the option to delete your branch since its changes have been integrated into the main branch. This keeps the repository tidy.
 
 ## Tracking Issues
 
@@ -39,14 +65,6 @@ Use issues to track tasks, bugs, or questions.
 
 1. **Open an Issue**: Click "Issues" > "New Issue" and describe your concern or suggestion.
 2. **Discussion**: Team members can comment on issues to provide feedback or solutions.
-
-## Making Pull Requests
-
-Pull requests let you propose changes to the documentation.
-
-1. **Propose Changes**: After pushing changes to your branch, click "Compare & pull request".
-2. **Describe Changes**: Explain what you've updated and mention any specific reviewers.
-3. **Review and Merge**: Team members review your changes. Once approved, a maintainer can merge them into the main branch.
 
 ## Best Practices
 
