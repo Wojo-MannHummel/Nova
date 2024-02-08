@@ -1,0 +1,42 @@
+name: Convert Documents to PDF
+
+on:
+  push:
+    paths:
+      - '**/*.docx'
+      - '**/*.xlsx'
+      - '**/*.pptx'
+
+jobs:
+  convert-to-pdf:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      
+      - name: Install LibreOffice
+        run: sudo apt-get install -y libreoffice
+      
+      - name: Convert Documents to PDF
+        run: |
+          mkdir -p pdfs
+          find . -type f \( -iname "*.docx" -o -iname "*.xlsx" -o -iname "*.pptx" \) -exec sh -c '
+            file="$1"
+            outfile="pdfs/$(basename "${file%.*}.pdf")"
+            libreoffice --headless --convert-to pdf:writer_pdf_Export --outdir $(dirname "$outfile") "$file"
+          ' _ {} \;
+      
+      - name: Commit PDFs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automatically convert documents to PDF"
+          branch: main
+          file_pattern: pdfs/
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_author: Wojo-MannHummel <Wojo-MannHummel@users.noreply.github.com>
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
