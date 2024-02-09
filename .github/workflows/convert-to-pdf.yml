@@ -18,22 +18,31 @@ jobs:
       
       - name: Install LibreOffice
         run: sudo apt-get install -y libreoffice
+
+      - name: Find Modified Documents
+        id: find-modified-documents
+        run: |
+          git fetch --depth=2
+          CHANGED_FILES=$(git diff --name-only ${{ github.sha }}^ ${{ github.sha }} | grep -E "\.docx$|\.xlsx$|\.pptx$")
+          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
+          echo "$CHANGED_FILES" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          echo "::set-output name=changed_files::$CHANGED_FILES"
       
       - name: Convert Documents to PDF
+        if: steps.find-modified-documents.outputs.changed_files != ''
         run: |
-          mkdir -p pdfs
-          find . -type f \( -iname "*.docx" -o -iname "*.xlsx" -o -iname "*.pptx" \) -exec sh -c '
-            file="$1"
-            outfile="pdfs/$(basename "${file%.*}.pdf")"
-            libreoffice --headless --convert-to pdf:writer_pdf_Export --outdir $(dirname "$outfile") "$file"
-          ' _ {} \;
+          while IFS= read -r file; do
+            outfile="$(dirname "$file")/$(basename "${file%.*}.pdf")"
+            libreoffice --headless --convert-to pdf:writer_pdf_Export --outdir "$(dirname "$outfile")" "$file"
+          done <<< "$CHANGED_FILES"
       
       - name: Commit PDFs
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Automatically convert documents to PDF"
           branch: ${{ github.ref_name }}
-          file_pattern: pdfs/
+          file_pattern: ./**/*.pdf
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
           commit_author: Wojo-MannHummel <Wojo-MannHummel@users.noreply.github.com>
